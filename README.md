@@ -1,9 +1,24 @@
-# Hồ sơ năng lực: landing page + PDF (04/11/2026)
+# lam-web-sinh-vien
 
-- index.html: landing page công khai (mục 1–4 của tam-nhin/2026-11-04-ho-so-nang-luc.md)
-- mau-gia-su.html, mau-thuc-tap.html: 2 trang mẫu demo (người giả định, có băng "trang mẫu")
-- ho-so-nang-luc.pdf: bản in 2 trang A4 của index.html
+Trang bán gói "làm web cá nhân cho sinh viên" của Novian. Astro + Tailwind CSS 4, cùng theme với trang giáo viên và portfolio (xanh rêu #1f6f5c + vàng #f2c14e, Be Vietnam Pro, sáng/tối).
 
-Placeholder (ô vàng) chờ Novian chốt: tên thương hiệu, SĐT Zalo (đổi cả link zalo.me/0000000000), email, link portfolio, link deploy của 2 trang mẫu (trong PDF).
-Deploy: chép cả thư mục lên một host tĩnh (Vercel/Netlify/GitHub Pages). Chưa deploy, chờ Novian chọn nơi.
-Xuất lại PDF: mở index.html trong Chrome, In > Lưu PDF, A4, tỉ lệ 90%, bật "Đồ họa nền".
+## Chạy
+
+```bash
+npm i -g pnpm   # nếu máy chưa có pnpm
+pnpm install
+pnpm dev        # http://localhost:4321
+pnpm build      # ra thư mục dist/
+```
+
+## Sửa nội dung
+
+- Chữ, giá, gói, trang mẫu: `src/data/noi-dung.json`
+- Màu, kính mờ, icon động: `src/styles/global.css`
+- Ảnh xem trước khi dán link (Zalo/Facebook): `public/og.jpg` (1200×630)
+- Trang mẫu cũ (HTML tĩnh, chưa chuyển): `public/mau-gia-su.html`, `public/mau-thuc-tap.html`
+- Hồ sơ năng lực PDF: `public/ho-so-nang-luc.pdf`
+
+## Deploy
+
+`wrangler.jsonc` đã sẵn cho Cloudflare Workers (có `"previews": {}` để mỗi PR có link xem trước), giống repo trang-giao-vien. Mọi thay đổi đi qua pull request kèm ảnh chụp.

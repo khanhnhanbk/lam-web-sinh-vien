@@ -1,0 +1,119 @@
+/* ===== THEME: chung "nhà Novian" (giống trang giáo viên, portfolio) ===== */
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --c-bg: #fbfaf7;      /* nền kem */
+  --c-card: #ffffff;
+  --c-ink: #1d2420;
+  --c-muted: #5f6b66;
+  --c-line: #e7e3da;
+  --c-brand: #1f6f5c;   /* xanh rêu */
+  --c-brand-ink: #ffffff;
+  --c-soft: #e3f0ec;
+  --c-accent: #f2c14e;  /* vàng */
+  --g1: #1f6f5c; --g2: #2a8a6e; --g3: #c9a43a;  /* gradient đầu trang */
+}
+[data-theme="dark"] {
+  --c-bg: #111614;
+  --c-card: #1a211e;
+  --c-ink: #e9eeeb;
+  --c-muted: #9fb0a8;
+  --c-line: #2b3531;
+  --c-brand: #5cc3a6;
+  --c-brand-ink: #0c1a15;
+  --c-soft: #1d3029;
+  --g1: #164f42; --g2: #1d6b57; --g3: #8a7128;
+}
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-card: var(--c-card);
+  --color-ink: var(--c-ink);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-brand: var(--c-brand);
+  --color-brand-ink: var(--c-brand-ink);
+  --color-soft: var(--c-soft);
+  --color-accent: var(--c-accent);
+  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
+  --radius-tile: 1.25rem;
+}
+
+@media (min-width: 1800px) { html { font-size: 112.5%; } }
+@media (min-width: 2400px) { html { font-size: 125%; } }
+
+html { background: var(--c-bg); color: var(--c-ink); scroll-padding-top: 5.5rem; }
+/* Cuộn mượt khi bấm link "#..."; ai bật giảm chuyển động thì nhảy thẳng. */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+h1, h2, h3, p { text-wrap: balance; }
+
+@layer components {
+  /* Kính mờ: dùng trên nền gradient đầu trang và thanh menu */
+  .glass {
+    background: rgb(255 255 255 / 0.14);
+    border: 1px solid rgb(255 255 255 / 0.35);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+  /* Thanh menu nổi: kính mờ nhuộm màu thương hiệu để chữ trắng đọc được trên cả nền kem */
+  .nav-kinh {
+    background: color-mix(in srgb, var(--g1) 78%, transparent);
+    border: 1px solid rgb(255 255 255 / 0.25);
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.12);
+  }
+  .tile { border-radius: var(--radius-tile); border: 1px solid var(--c-line); background: var(--c-card); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    border-radius: 9999px; padding: .75rem 1.4rem; font-weight: 700; transition: transform .15s, filter .15s;
+  }
+  .btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+  .chip { display: inline-flex; align-items: center; gap: .35rem; border-radius: 9999px; background: var(--c-soft); color: var(--c-brand); padding: .2rem .7rem; font-size: .8rem; font-weight: 700; }
+}
+
+/* Hiện dần khi cuộn tới (script thêm .hien) */
+@media (prefers-reduced-motion: no-preference) {
+  .len { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .len.hien { opacity: 1; transform: none; }
+}
+
+/* ===== Icon động (CSS thuần, không JS) ===== */
+.ic { transform-box: fill-box; transform-origin: center; }
+@keyframes ic-nhich { 50% { transform: translateX(4px); } }
+@keyframes ic-cheo { 50% { transform: translate(2px, -2px); } }
+@keyframes ic-ve { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
+@keyframes ic-lac { 20% { transform: rotate(-14deg); } 40% { transform: rotate(12deg); } 60% { transform: rotate(-8deg); } 80% { transform: rotate(4deg); } }
+@keyframes ic-rung { 10%, 50%, 90% { transform: rotate(-12deg); } 30%, 70% { transform: rotate(12deg); } 100% { transform: none; } }
+@keyframes ic-nhay { 30% { transform: scale(1.18); } 60% { transform: scale(.94); } }
+@keyframes ic-quay { to { transform: rotate(180deg); } }
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) {
+    :is(a, button):hover .ic-arrowRight { animation: ic-nhich .7s ease-in-out; }
+    :is(a, button):hover .ic-external { animation: ic-cheo .7s ease-in-out; }
+    :is(.tile, li):hover .ic-check :is(path), .tile:hover :is(.ic-link, .ic-infinity) :is(path) { animation: ic-ve .7s ease-out; }
+    .tile:hover .ic-layers, :is(a, button):hover .ic-chat { animation: ic-nhay .7s ease-out; }
+    :is(.tile, a):hover .ic-phone { animation: ic-rung .6s ease-in-out; }
+    button:hover .ic-moon { animation: ic-lac .8s ease-in-out; }
+    button:hover .ic-sun { animation: ic-quay .8s ease-in-out; }
+  }
+  @media (hover: none) {
+    .hien :is(.ic-link, .ic-infinity) :is(path) { animation: ic-ve .7s ease-out .3s backwards; }
+    .hien .ic-layers { animation: ic-nhay .7s .3s; }
+    .hien .ic-phone { animation: ic-rung .6s ease-in-out .3s; }
+  }
+}
+
+/* ===== In ra PDF A4 (hồ sơ năng lực) ===== */
+@page { size: A4; margin: 12mm; }
+@media print {
+  html { font-size: 12px; }
+  .khong-in { display: none !important; }
+  .len { opacity: 1 !important; transform: none !important; }
+  .hero { border-radius: 0 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  section, .tile, li { break-inside: avoid; }
+  .chi-in { display: block !important; }
+  a[href^="http"] .chi-in { font-size: 10px; color: var(--c-muted); }
+}
