@@ -1,0 +1,70 @@
+{
+  "ten": "Trần Thị B",
+  "viet_tat": "B",
+  "chuc_danh": [
+    "Sinh viên năm 3 Marketing",
+    "ĐH Kinh tế TP.HCM"
+  ],
+  "muc_tieu": "Mình tìm vị trí thực tập Digital Marketing / Content, toàn thời gian từ tháng 1/2027.",
+  "trang_thai": "Sẵn sàng thực tập",
+  "lien_ket": [
+    {
+      "nhan": "Tải CV (PDF)",
+      "icon": "download",
+      "chinh": true
+    },
+    {
+      "nhan": "Email",
+      "icon": "mail"
+    },
+    {
+      "nhan": "Zalo",
+      "icon": "chat"
+    },
+    {
+      "nhan": "LinkedIn",
+      "icon": "external"
+    }
+  ],
+  "du_an": [
+    {
+      "ten": "Fanpage CLB Tiếng Anh",
+      "mo_ta": "Lên lịch nội dung và quay video ngắn cho fanpage CLB trong 6 tháng.",
+      "ket_qua": "1.200 → 8.500 người theo dõi"
+    },
+    {
+      "ten": "Chiến dịch Mùa hè xanh",
+      "mo_ta": "Viết bài, chạy quảng cáo Facebook với ngân sách 2 triệu để tuyển tình nguyện viên.",
+      "ket_qua": "320 đơn đăng ký"
+    },
+    {
+      "ten": "Tiệm bánh nhà bạn",
+      "mo_ta": "Chụp ảnh sản phẩm, viết mô tả và dựng shop trên Shopee.",
+      "ket_qua": "Đơn online tăng 40% sau 2 tháng"
+    }
+  ],
+  "ky_nang": [
+    "Content Facebook / TikTok",
+    "Canva",
+    "CapCut",
+    "Meta Ads cơ bản",
+    "Google Analytics",
+    "Excel",
+    "IELTS 7.0"
+  ],
+  "hoc_van": [
+    {
+      "ten": "ĐH Kinh tế TP.HCM, ngành Marketing",
+      "thoi_gian": "2024 – nay · GPA 3,4/4"
+    },
+    {
+      "ten": "Trưởng ban Truyền thông, CLB Tiếng Anh",
+      "thoi_gian": "2025 – nay"
+    },
+    {
+      "ten": "Cộng tác viên content, một shop thời trang online",
+      "thoi_gian": "Hè 2025 · bán thời gian"
+    }
+  ],
+  "loi_cuoi": "Cảm ơn anh/chị đã xem. Mình trả lời email trong 24 giờ."
+}
