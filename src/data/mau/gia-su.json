@@ -1,0 +1,87 @@
+{
+  "ten": "Nguyễn Văn A",
+  "viet_tat": "A",
+  "chuc_danh": "Gia sư Toán – Lý cấp 2, cấp 3",
+  "khu_vuc": "Quận Thủ Đức, TP.HCM",
+  "chips": [
+    "SV năm 3 ĐH Sư phạm",
+    "3 năm kinh nghiệm",
+    "Dạy tại nhà / online"
+  ],
+  "con_so": [
+    {
+      "so": "18",
+      "nhan": "học sinh đã dạy"
+    },
+    {
+      "so": "+2,1",
+      "nhan": "điểm TB tăng / kỳ"
+    },
+    {
+      "so": "9,6",
+      "nhan": "Toán THPT của mình"
+    }
+  ],
+  "ve_minh": "Mình thích dạy theo kiểu hiểu bản chất trước, làm bài sau. Mỗi buổi đều có bài tập về nhà và mình nhắn phụ huynh tình hình học cuối tuần qua Zalo.",
+  "hoc_phi": [
+    {
+      "mon": "Toán lớp 6–9",
+      "gia": "180.000đ"
+    },
+    {
+      "mon": "Toán, Lý lớp 10–11",
+      "gia": "220.000đ"
+    },
+    {
+      "mon": "Luyện thi vào 10 / THPT",
+      "gia": "250.000đ"
+    }
+  ],
+  "don_vi": "buổi 90 phút",
+  "ghi_chu_hoc_phi": "Học thử 1 buổi miễn phí. Dạy online giảm 20.000đ/buổi.",
+  "lich": [
+    {
+      "ngay": "T2",
+      "ranh": "tối"
+    },
+    {
+      "ngay": "T3",
+      "ranh": ""
+    },
+    {
+      "ngay": "T4",
+      "ranh": "tối"
+    },
+    {
+      "ngay": "T5",
+      "ranh": ""
+    },
+    {
+      "ngay": "T6",
+      "ranh": "tối"
+    },
+    {
+      "ngay": "T7",
+      "ranh": "sáng"
+    },
+    {
+      "ngay": "CN",
+      "ranh": "cả ngày"
+    }
+  ],
+  "thanh_tich": [
+    "Giải Nhì học sinh giỏi Toán cấp tỉnh (2021)",
+    "Học bổng khuyến khích học tập 4 học kỳ liền",
+    "Chứng chỉ nghiệp vụ sư phạm"
+  ],
+  "nhan_xet": [
+    {
+      "loi": "Cháu từ sợ Toán thành chịu làm bài. Thầy nhắn tình hình đều nên nhà yên tâm.",
+      "ai": "Phụ huynh học sinh lớp 8"
+    },
+    {
+      "loi": "Em lên 8,5 Toán thi vào 10, cảm ơn thầy A nhiều.",
+      "ai": "Học sinh lớp 9"
+    }
+  ]
+}

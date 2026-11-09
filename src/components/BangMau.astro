@@ -1,0 +1,11 @@
+---
+// Băng vàng đầu trang mẫu + nút sáng/tối nổi. Dùng chung cho mọi trang mẫu.
+import Icon from './Icon.astro';
+---
+<div class="bg-accent px-4 py-1.5 text-center text-[13px] font-semibold text-[#1d1b18]">
+  Trang mẫu, thông tin là giả định · <a class="underline" href="/#bang-gia">Muốn có trang như này? Xem bảng giá →</a>
+</div>
+<button data-doi-theme type="button" aria-label="Đổi giao diện sáng/tối"
+  class="khong-in fixed top-10 right-3 z-30 grid size-10 place-items-center rounded-full border border-line bg-card text-ink shadow-sm">
+  <span class="dark:hidden"><Icon name="moon" /></span><span class="hidden dark:inline"><Icon name="sun" /></span>
+</button>

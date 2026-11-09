@@ -1,0 +1,86 @@
+---
+// Trang mẫu: gia sư. Chữ ở src/data/mau/gia-su.json. Cùng khuôn với trang giáo viên.
+import Base from '../layouts/Base.astro';
+import BangMau from '../components/BangMau.astro';
+import Icon from '../components/Icon.astro';
+import d from '../data/mau/gia-su.json';
+---
+<Base title={`${d.ten} · ${d.chuc_danh} (trang mẫu)`} description={`${d.chuc_danh}, ${d.khu_vuc}. ${d.ve_minh}`}>
+  <BangMau />
+  <header class="hero rounded-b-[28px] bg-gradient-to-br from-(--g1) via-(--g2) to-(--g3) text-white lg:rounded-b-[40px]">
+    <div class="mx-auto max-w-4xl px-5 pt-12 pb-16 text-center lg:pt-16 lg:pb-20">
+      <div class="len mx-auto grid size-24 place-items-center rounded-full border-4 border-white bg-white/20 text-4xl font-extrabold">{d.viet_tat}</div>
+      <h1 class="len mt-4 text-3xl font-extrabold lg:text-5xl">{d.ten}</h1>
+      <p class="len mt-2 text-lg opacity-90"><span class="block sm:inline">{d.chuc_danh}</span><span class="hidden sm:inline"> · </span><span class="block sm:inline">{d.khu_vuc}</span></p>
+      <div class="len mt-5 flex flex-wrap justify-center gap-2">
+        {d.chips.map((c) => <span class="glass rounded-full px-3 py-1 text-sm font-bold">{c}</span>)}
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-4xl px-4 pb-28 lg:pb-16">
+    <!-- Con số: nổi lên đè mép dưới đầu trang -->
+    <section class="-mt-9 grid grid-cols-3 gap-2.5 lg:gap-4">
+      {d.con_so.map((c, i) => (
+        <div class={`tile len p-4 text-center lg:p-6 ${i === 0 ? 'bg-brand text-brand-ink border-transparent' : ''}`}>
+          <b class="block text-2xl lg:text-4xl">{c.so}</b>
+          <span class={`text-xs lg:text-sm ${i === 0 ? 'opacity-90' : 'text-muted'}`}>{c.nhan}</span>
+        </div>
+      ))}
+    </section>
+
+    <section class="tile len mt-4 p-6 lg:p-8">
+      <h2 class="text-xl font-extrabold lg:text-2xl">Về mình</h2>
+      <p class="mt-2 text-muted lg:text-lg">{d.ve_minh}</p>
+    </section>
+
+    <section class="mt-4 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
+      <div class="tile len p-6 lg:p-8">
+        <h2 class="text-xl font-extrabold lg:text-2xl">Môn dạy và học phí</h2>
+        <ul class="mt-4 divide-y divide-line">
+          {d.hoc_phi.map((h) => (
+            <li class="flex items-baseline justify-between gap-3 py-3"><span>{h.mon}</span><b class="shrink-0 text-brand">{h.gia}</b></li>
+          ))}
+        </ul>
+        <p class="mt-2 text-sm text-muted">Giá mỗi {d.don_vi}. {d.ghi_chu_hoc_phi}</p>
+      </div>
+      <div class="tile len p-6 lg:p-8">
+        <h2 class="text-xl font-extrabold lg:text-2xl">Lịch rảnh</h2>
+        <div class="mt-4 grid grid-cols-7 gap-1.5">
+          {d.lich.map((l) => (
+            <div class={`rounded-xl px-1 py-2.5 text-center text-xs font-bold ${l.ranh ? 'bg-brand text-brand-ink' : 'bg-soft text-muted'}`}>
+              {l.ngay}<span class="mt-0.5 block text-[10px] font-medium">{l.ranh || 'kín'}</span>
+            </div>
+          ))}
+        </div>
+        <p class="mt-3 text-sm text-muted">Ô xanh là còn trống.</p>
+      </div>
+    </section>
+
+    <section class="tile len mt-4 p-6 lg:p-8">
+      <h2 class="text-xl font-extrabold lg:text-2xl">Thành tích</h2>
+      <ul class="mt-3 space-y-2">
+        {d.thanh_tich.map((t) => <li class="flex gap-2"><Icon name="check" class="mt-0.5 size-5 shrink-0 text-brand" stroke={2.4} />{t}</li>)}
+      </ul>
+    </section>
+
+    <section class="mt-4 grid gap-4 sm:grid-cols-2">
+      {d.nhan_xet.map((n) => (
+        <figure class="tile len p-6">
+          <blockquote class="text-lg">“{n.loi}”</blockquote>
+          <figcaption class="mt-3 text-sm font-bold text-muted">{n.ai}</figcaption>
+        </figure>
+      ))}
+    </section>
+
+    <section class="len mt-8 hidden justify-center gap-3 sm:flex">
+      <a href="#" class="btn bg-brand text-brand-ink"><Icon name="chat" />Nhắn Zalo</a>
+      <a href="#" class="btn border-[1.5px] border-brand text-brand"><Icon name="phone" />Gọi điện</a>
+    </section>
+  </main>
+
+  <div class="khong-in fixed inset-x-0 bottom-0 z-30 flex gap-2.5 border-t border-line bg-bg/90 px-4 py-3 backdrop-blur sm:hidden">
+    <a href="#" class="btn flex-1 bg-brand text-brand-ink"><Icon name="chat" />Nhắn Zalo</a>
+    <a href="#" class="btn flex-1 border-[1.5px] border-brand text-brand"><Icon name="phone" />Gọi điện</a>
+  </div>
+</Base>
