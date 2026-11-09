@@ -1,0 +1,157 @@
+{
+  "thuong_hieu": "Novian",
+  "thuong_hieu_phu": "Web cá nhân",
+  "zalo": "84349796850",
+  "dien_thoai_hien_thi": "(+84) 349 796 850",
+  "email": "nhannguyenqna2002@gmail.com",
+  "seo": {
+    "title": "Làm web cá nhân cho sinh viên · từ 500.000đ · Novian",
+    "description": "Trang giới thiệu bản thân cho sinh viên dạy gia sư, xin thực tập, nhận việc làm thêm. Đẹp trên điện thoại, nút Zalo một chạm, có link trong vài ngày."
+  },
+  "hero": {
+    "nhan": "Nhận làm trong tuần này",
+    "tieu_de": [
+      "Một trang web của riêng bạn.",
+      "Gửi link là người ta hiểu bạn."
+    ],
+    "mo_ta": "Mình làm trang giới thiệu bản thân cho sinh viên dạy gia sư, xin thực tập, nhận việc làm thêm. Gọn, đẹp trên điện thoại, có nút gọi Zalo một chạm.",
+    "nut_chinh": "Xem bảng giá",
+    "nut_phu": "Xem trang mẫu",
+    "diem": [
+      "Từ 500.000đ",
+      "Có link trong 3–7 ngày",
+      "Không phí hằng tháng"
+    ]
+  },
+  "vi_sao": {
+    "tieu_de": "Vì sao nên có một trang riêng?",
+    "mo_ta": "Phụ huynh và nhà tuyển dụng tin một trang web riêng hơn một tin nhắn dài.",
+    "o": [
+      {
+        "icon": "link",
+        "tieu_de": "Gửi một link là đủ",
+        "noi_dung": "Dán vào Zalo, Facebook, CV. Không phải gõ lại thông tin cho từng người."
+      },
+      {
+        "icon": "layers",
+        "tieu_de": "Đủ thứ người ta cần",
+        "noi_dung": "Ảnh, học vấn, thành tích, lịch rảnh, môn dạy và học phí, đặt hết ở một chỗ."
+      },
+      {
+        "icon": "phone",
+        "tieu_de": "Bấm là gọi được",
+        "noi_dung": "Nút Zalo và điện thoại một chạm, mở nhanh trên mọi điện thoại."
+      },
+      {
+        "icon": "infinity",
+        "tieu_de": "Không tốn phí hằng tháng",
+        "noi_dung": "Hosting miễn phí. Trang chạy mãi, không phải gia hạn."
+      }
+    ]
+  },
+  "bang_gia": {
+    "tieu_de": "Các gói và giá",
+    "mo_ta": "Giá trọn gói bằng VNĐ, hosting miễn phí, không phí hằng tháng.",
+    "goi": [
+      {
+        "ten": "Cơ bản",
+        "gia": "500.000đ",
+        "noi_bat": false,
+        "y": [
+          "1 trang theo mẫu có sẵn",
+          "Ảnh, giới thiệu, học vấn, kinh nghiệm",
+          "Nút gọi Zalo / điện thoại"
+        ],
+        "sua": "Sửa 1 lần",
+        "giao": "Giao trong 3 ngày"
+      },
+      {
+        "ten": "Đầy đủ",
+        "gia": "800.000đ",
+        "noi_bat": true,
+        "y": [
+          "Mọi thứ của gói Cơ bản",
+          "Màu và bố cục theo ý bạn",
+          "Thành tích, chứng chỉ, lịch rảnh",
+          "Môn dạy và học phí"
+        ],
+        "sua": "Sửa 2 lần",
+        "giao": "Giao trong 5 ngày"
+      },
+      {
+        "ten": "Nhận đăng ký",
+        "gia": "1.000.000đ",
+        "noi_bat": false,
+        "y": [
+          "Mọi thứ của gói Đầy đủ",
+          "Form đăng ký gửi thẳng về Google Sheet của bạn",
+          "Hướng dẫn tự sửa nội dung"
+        ],
+        "sua": "Sửa 3 lần",
+        "giao": "Giao trong 7 ngày"
+      }
+    ],
+    "nhan_noi_bat": "Nhiều người chọn",
+    "ghi_chu": "Tên miền riêng (vd. tenban.com) không tính trong gói: bạn tự trả phí năm, mình gắn giùm miễn phí. Không mua thì dùng link miễn phí mình tạo sẵn."
+  },
+  "quy_trinh": {
+    "tieu_de": "Quy trình và thanh toán",
+    "mo_ta": "Năm bước, xem bản nháp trên điện thoại trước khi trả hết.",
+    "buoc": [
+      "Nhắn Zalo, chọn gói, gửi thông tin theo mẫu.",
+      "Cọc 50%.",
+      "Nhận link bản nháp, mở xem trên điện thoại.",
+      "Góp ý và sửa theo số lần của gói.",
+      "Ưng thì trả 50% còn lại, nhận link chính thức."
+    ],
+    "ghi_chu": "Sau khi giao, lỗi do mình thì sửa miễn phí trong 30 ngày. Đổi nội dung về sau 50.000đ/lần (gói 1 triệu tự sửa được)."
+  },
+  "mau": {
+    "tieu_de": "Sản phẩm mẫu",
+    "mo_ta": "Bấm vào để xem trên điện thoại của bạn.",
+    "the": [
+      {
+        "nhan": "Trang mẫu",
+        "tieu_de": "Giáo viên tiếng Anh",
+        "noi_dung": "Lớp dạy, học phí, lịch rảnh, 8 giao diện để chọn.",
+        "link": "https://trang-giao-vien.nhannguyenqna2002.workers.dev"
+      },
+      {
+        "nhan": "Trang mẫu",
+        "tieu_de": "Gia sư Toán Lý",
+        "noi_dung": "Môn dạy, học phí, lịch rảnh, nút gọi phụ huynh.",
+        "link": "/mau-gia-su.html"
+      },
+      {
+        "nhan": "Trang mẫu",
+        "tieu_de": "Xin thực tập",
+        "noi_dung": "Dự án, kỹ năng, link CV, nút liên hệ.",
+        "link": "/mau-thuc-tap.html"
+      },
+      {
+        "nhan": "Đã làm",
+        "tieu_de": "Hán ngữ Studio",
+        "noi_dung": "Web học tiếng Trung do mình làm.",
+        "link": "https://han-ngu-studio.vercel.app/"
+      },
+      {
+        "nhan": "Đã làm",
+        "tieu_de": "Portfolio Novian",
+        "noi_dung": "Dự án, kinh nghiệm và kỹ năng của mình.",
+        "link": "https://khanhnhanbk.github.io"
+      }
+    ],
+    "xem": "Xem trang"
+  },
+  "ve_minh": {
+    "tieu_de": "Ai làm trang của bạn?",
+    "ten": "Nguyễn Văn Khánh Nhân (Novian)",
+    "noi_dung": "Tốt nghiệp Khoa học Máy tính, ĐH Bách Khoa TP.HCM, loại giỏi. Hiện là Python developer tại Akselos (Sài Gòn), nhận làm web, app và landing page."
+  },
+  "cuoi": {
+    "tieu_de": "Muốn có trang của riêng bạn?",
+    "mo_ta": "Nhắn Zalo để nhận mẫu điền thông tin. Trả lời trong ngày.",
+    "nut_zalo": "Nhắn Zalo",
+    "nut_goi": "Gọi"
+  }
+}
