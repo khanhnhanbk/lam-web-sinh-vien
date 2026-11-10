@@ -5,7 +5,10 @@
   },
   "hero": {
     "nhan": "Dành cho thầy cô dạy kèm",
-    "tieu_de": ["Trang web là gì,", "và thầy cô cần làm gì tiếp?"],
+    "tieu_de": [
+      "Trang web là gì,",
+      "và thầy cô cần làm gì tiếp?"
+    ],
     "mo_ta": "Đọc 5 phút là hiểu. Phần cuối có bước tiếp theo để thầy cô bắt đầu ngay.",
     "nut_chinh": "Bắt đầu chuẩn bị",
     "nut_phu": "Xem hỏi đáp"
@@ -46,6 +49,10 @@
       {
         "hoi": "Có Facebook, Zalo rồi, cần trang web làm gì?",
         "dap": "Bài trên Facebook trôi rất nhanh, phụ huynh phải lướt mới thấy thông tin. Trang web gom mọi thứ vào một chỗ: ảnh, bằng cấp, lớp dạy, lịch rảnh, nút nhắn Zalo. Thầy cô chỉ cần gửi một link, khỏi gõ lại cho từng người, nhìn cũng chỉn chu hơn."
+      },
+      {
+        "hoi": "Wix làm web miễn phí, sao thuê làm lại mất tiền?",
+        "dap": "Wix là công cụ để tự làm web, bản miễn phí dùng tốt nếu thầy cô thích tự tay làm. Đổi lại, trang sẽ hiện quảng cáo của Wix, link dài kiểu tenthayco.wixsite.com/trang-web, và thầy cô tự kéo thả, tự viết chữ, tự chỉnh cho gọn trên điện thoại. Muốn bỏ quảng cáo và dùng tên miền riêng thì Wix tính phí theo năm. Thuê mình thì trả một lần: mình viết nội dung, làm trang gọn trên điện thoại, gắn nút Zalo, không quảng cáo, không phí hằng tháng. Nói gọn: tự làm bằng Wix thì đỡ tiền, thuê mình thì đỡ thời gian."
       },
       {
         "hoi": "Trên trang thường có những gì?",
