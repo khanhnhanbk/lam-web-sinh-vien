@@ -21,7 +21,7 @@ const ngoai = (link: string) => link.startsWith('http');
         <button data-doi-theme type="button" aria-label="Đổi giao diện sáng/tối" class="grid size-9 place-items-center rounded-full hover:bg-white/15">
           <span class="dark:hidden"><Icon name="moon" /></span><span class="hidden dark:inline"><Icon name="sun" /></span>
         </button>
-        <a href={zalo} class="btn bg-white px-4 py-2 text-sm text-(--g1)">Nhắn Zalo</a>
+        <a href={zalo} target="_blank" rel="noopener" class="btn bg-white px-4 py-2 text-sm text-(--g1)">Nhắn Zalo</a>
       </div>
     </nav>
 
@@ -158,7 +158,7 @@ const ngoai = (link: string) => link.startsWith('http');
         <h2 class="text-3xl font-extrabold tracking-tight lg:text-5xl">{d.cuoi.tieu_de}</h2>
         <p class="mx-auto mt-3 max-w-xl text-lg opacity-90">{d.cuoi.mo_ta}</p>
         <div class="mt-7 flex flex-wrap justify-center gap-3">
-          <a href={zalo} class="btn bg-white text-(--g1) lg:px-7 lg:py-3.5 lg:text-lg"><Icon name="chat" />{d.cuoi.nut_zalo}</a>
+          <a href={zalo} target="_blank" rel="noopener" class="btn bg-white text-(--g1) lg:px-7 lg:py-3.5 lg:text-lg"><Icon name="chat" />{d.cuoi.nut_zalo}</a>
           <a href={tel} class="btn border-[1.5px] border-white/70 lg:px-7 lg:py-3.5 lg:text-lg"><Icon name="phone" />{d.cuoi.nut_goi} {d.dien_thoai_hien_thi}</a>
         </div>
         <p class="mt-6 text-sm opacity-90">Zalo / điện thoại: {d.dien_thoai_hien_thi} · Email: <a class="underline" href={`mailto:${d.email}`}>{d.email}</a></p>
@@ -170,7 +170,7 @@ const ngoai = (link: string) => link.startsWith('http');
 
   <!-- Nút Zalo nổi ở đáy màn hình điện thoại -->
   <div class="khong-in fixed inset-x-0 bottom-0 z-30 flex gap-2.5 border-t border-line bg-bg/90 px-4 py-3 backdrop-blur sm:hidden">
-    <a href={zalo} class="btn flex-1 bg-brand text-brand-ink"><Icon name="chat" />Nhắn Zalo</a>
+    <a href={zalo} target="_blank" rel="noopener" class="btn flex-1 bg-brand text-brand-ink"><Icon name="chat" />Nhắn Zalo</a>
     <a href={tel} class="btn flex-1 border-[1.5px] border-brand text-brand"><Icon name="phone" />Gọi</a>
   </div>
 </Base>

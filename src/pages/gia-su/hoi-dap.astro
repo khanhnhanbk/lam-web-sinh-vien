@@ -83,7 +83,7 @@ const zalo = `https://zalo.me/${chung.zalo}`;
           </p>
           <div class="mt-4 flex flex-wrap justify-center gap-2.5 sm:justify-start">
             <a href={d.ve_minh.link} target="_blank" rel="noopener" class="btn bg-brand text-brand-ink"><Icon name="user" />{d.ve_minh.nut}</a>
-            <a href={zalo} class="btn border-[1.5px] border-brand text-brand"><Icon name="chat" />Nhắn Zalo</a>
+            <a href={zalo} target="_blank" rel="noopener" class="btn border-[1.5px] border-brand text-brand"><Icon name="chat" />Nhắn Zalo</a>
           </div>
         </div>
       </div>
@@ -99,10 +99,10 @@ const zalo = `https://zalo.me/${chung.zalo}`;
     </section>
   </main>
 
-  <footer class="pb-24 text-center text-sm text-muted lg:pb-10">© 2026 {chung.thuong_hieu} · Nguyễn Văn Khánh Nhân · <a class="underline" href="https://khanhnhanbk.github.io">khanhnhanbk.github.io</a></footer>
+  <footer class="pb-24 text-center text-sm text-muted lg:pb-10">© 2026 {chung.thuong_hieu} · Nguyễn Văn Khánh Nhân · <a class="underline" href="https://khanhnhanbk.github.io" target="_blank" rel="noopener">khanhnhanbk.github.io</a></footer>
 
   <div class="khong-in fixed inset-x-0 bottom-0 z-30 flex gap-2.5 border-t border-line bg-bg/90 px-4 py-3 backdrop-blur sm:hidden">
     <a href="/gia-su/chuan-bi.html" class="btn flex-1 whitespace-nowrap bg-brand text-brand-ink">Chuẩn bị</a>
-    <a href={zalo} class="btn flex-1 border-[1.5px] border-brand text-brand"><Icon name="chat" />Zalo</a>
+    <a href={zalo} target="_blank" rel="noopener" class="btn flex-1 border-[1.5px] border-brand text-brand"><Icon name="chat" />Zalo</a>
   </div>
 </Base>
