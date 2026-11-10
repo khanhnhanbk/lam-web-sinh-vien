@@ -1,0 +1,100 @@
+{
+  "seo": {
+    "title": "Hỏi đáp về trang web cho thầy cô dạy kèm · Novian",
+    "description": "Trang web, landing page, tên miền là gì; cần chuẩn bị gì; sửa về sau thế nào. Viết bằng lời dễ hiểu cho thầy cô dạy kèm."
+  },
+  "hero": {
+    "nhan": "Dành cho thầy cô dạy kèm",
+    "tieu_de": ["Trang web là gì,", "và thầy cô cần làm gì tiếp?"],
+    "mo_ta": "Đọc 5 phút là hiểu. Phần cuối có bước tiếp theo để thầy cô bắt đầu ngay.",
+    "nut_chinh": "Bắt đầu chuẩn bị",
+    "nut_phu": "Xem hỏi đáp"
+  },
+  "kien_thuc": {
+    "tieu_de": "4 điều cần biết",
+    "mo_ta": "Không cần rành máy tính. Chỉ cần hiểu bốn chữ này là nói chuyện với người làm web được rồi.",
+    "o": [
+      {
+        "icon": "globe",
+        "tieu_de": "Trang web",
+        "noi_dung": "Một trang thông tin có link riêng. Ai có link là mở xem được trên điện thoại hay máy tính, không cần cài app."
+      },
+      {
+        "icon": "layers",
+        "tieu_de": "Landing page",
+        "noi_dung": "Trang web chỉ có một trang, cuộn từ trên xuống. Người xem đọc xong là biết thầy cô dạy gì, rồi bấm nhắn Zalo để đăng ký học."
+      },
+      {
+        "icon": "link",
+        "tieu_de": "Tên miền",
+        "noi_dung": "Là cái link để gửi cho người khác, ví dụ thaylam.vercel.app (miễn phí) hoặc thaylam.com (trả phí theo năm)."
+      },
+      {
+        "icon": "infinity",
+        "tieu_de": "Hosting",
+        "noi_dung": "Là chỗ đặt trang trên mạng để lúc nào cũng mở được. Trang của thầy cô dùng hosting miễn phí, không phải trả hằng tháng."
+      }
+    ],
+    "mau_tieu_de": "Xem một trang mẫu",
+    "mau_mo_ta": "Trang giáo viên tiếng Anh, có sẵn 8 kiểu màu để bấm thử.",
+    "mau_link": "https://trang-giao-vien.nhannguyenqna2002.workers.dev"
+  },
+  "hoi_dap": {
+    "tieu_de": "Câu hỏi thường gặp",
+    "mo_ta": "Bấm vào câu hỏi để xem trả lời.",
+    "cau": [
+      {
+        "hoi": "Có Facebook, Zalo rồi, cần trang web làm gì?",
+        "dap": "Bài trên Facebook trôi rất nhanh, phụ huynh phải lướt mới thấy thông tin. Trang web gom mọi thứ vào một chỗ: ảnh, bằng cấp, lớp dạy, lịch rảnh, nút nhắn Zalo. Thầy cô chỉ cần gửi một link, khỏi gõ lại cho từng người, nhìn cũng chỉn chu hơn."
+      },
+      {
+        "hoi": "Trên trang thường có những gì?",
+        "dap": "Ảnh và tên, vài câu giới thiệu, bằng cấp và kinh nghiệm, các lớp đang dạy, học phí (nếu muốn ghi), lịch còn trống, nhận xét của học viên, nút nhắn Zalo và gọi điện. Mục nào cần, mục nào bỏ, thầy cô tự chọn ở trang Chuẩn bị."
+      },
+      {
+        "hoi": "Thầy cô cần làm gì?",
+        "dap": "Ba việc: tạo một thư mục trên Google Drive, bỏ thông tin và ảnh vào đó, rồi chia sẻ thư mục cho mình. Trang Chuẩn bị hướng dẫn từng bước, có sẵn phiếu để điền."
+      },
+      {
+        "hoi": "Sao không điền form rồi bấm gửi cho nhanh?",
+        "dap": "Gửi form xong là thầy cô không xem lại, cũng không sửa được nữa. Để trong Google Drive thì thông tin nằm ở chỗ của thầy cô: mở ra xem lúc nào cũng được, sửa một chữ là mình thấy bản mới nhất. Ảnh bỏ vào cùng thư mục cũng giữ nguyên độ nét, không bị nén như gửi qua Zalo."
+      },
+      {
+        "hoi": "Không rành máy tính thì có làm được không?",
+        "dap": "Được. Mọi bước đều làm được trên điện thoại bằng app Google Drive. Ngại thì thầy cô cứ gửi thông tin qua Zalo, mình gom vào thư mục giùm, hoặc gọi mình hướng dẫn qua điện thoại."
+      },
+      {
+        "hoi": "Bao lâu thì có trang?",
+        "dap": "Khi đủ thông tin và ảnh, mình gửi link bản nháp trong 3 đến 7 ngày. Thầy cô mở trên điện thoại xem, góp ý, mình sửa tới khi ưng thì mới chốt."
+      },
+      {
+        "hoi": "Sau này muốn đổi học phí, lịch dạy thì sao?",
+        "dap": "Thầy cô sửa trong Google Doc của mình rồi nhắn Zalo một câu, mình cập nhật lên trang. Muốn tự sửa thì mình hướng dẫn thêm."
+      },
+      {
+        "hoi": "Có tốn tiền hằng tháng không?",
+        "dap": "Không. Hosting miễn phí, trang chạy hoài không phải gia hạn. Chỉ khi thầy cô muốn tên miền riêng kiểu thaylam.com thì trả phí theo năm, khoảng 300.000đ/năm, tên miền đứng tên thầy cô, mình gắn giùm."
+      },
+      {
+        "hoi": "Gõ tên trên Google có ra trang không?",
+        "dap": "Có thể ra, thường sau vài tuần. Mình khai báo trang với Google giùm, nhưng thứ tự hiện trên Google do Google quyết định nên mình không hứa vị trí."
+      },
+      {
+        "hoi": "Thông tin cá nhân có an toàn không?",
+        "dap": "Trên trang chỉ hiện những gì thầy cô duyệt. Không cần đưa số nhà, căn cước hay số tài khoản. Ảnh bằng cấp thì che số hiệu trước khi bỏ vào thư mục. Thư mục Drive chỉ chia sẻ cho mình, xong việc thầy cô tắt chia sẻ là xong."
+      }
+    ]
+  },
+  "ve_minh": {
+    "tieu_de": "Ai làm trang cho thầy cô?",
+    "ten": "Nguyễn Văn Khánh Nhân (Novian)",
+    "noi_dung": "Tốt nghiệp Khoa học Máy tính, ĐH Bách Khoa TP.HCM, loại giỏi. Hiện là Python developer tại Akselos (Sài Gòn), nhận làm web, app và landing page.",
+    "nut": "Xem hồ sơ của mình",
+    "link": "https://khanhnhanbk.github.io"
+  },
+  "tiep_theo": {
+    "tieu_de": "Bước tiếp theo",
+    "mo_ta": "Mở trang Chuẩn bị, chọn mục cần có, chọn màu và bố cục, rồi làm theo hướng dẫn để gửi thông tin qua Google Drive.",
+    "nut": "Mở trang Chuẩn bị"
+  }
+}

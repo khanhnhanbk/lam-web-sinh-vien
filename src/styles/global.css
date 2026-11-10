@@ -47,7 +47,8 @@
 html { background: var(--c-bg); color: var(--c-ink); scroll-padding-top: 5.5rem; }
 /* Cuộn mượt khi bấm link "#..."; ai bật giảm chuyển động thì nhảy thẳng. */
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-h1, h2, h3, p { text-wrap: balance; }
+/* Trong @layer base để class text-pretty (đoạn dài) ghi đè được */
+@layer base { h1, h2, h3, p { text-wrap: balance; } }
 
 @layer components {
   /* Kính mờ: dùng trên nền gradient đầu trang và thanh menu */
