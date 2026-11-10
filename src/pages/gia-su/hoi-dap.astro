@@ -73,12 +73,15 @@ const zalo = `https://zalo.me/${chung.zalo}`;
     <!-- 3. AI LÀM: link portfolio -->
     <section class="mt-14 lg:mt-20">
       <div class="tile len flex flex-col items-center gap-5 p-6 text-center sm:flex-row sm:text-left lg:p-8">
-        <div class="grid size-20 shrink-0 place-items-center rounded-full bg-gradient-to-br from-(--g1) to-(--g3) text-3xl font-extrabold text-white">N</div>
+        <picture class="shrink-0">
+          <source srcset="/avatar.webp" type="image/webp" />
+          <img src="/avatar.jpg" alt="Ảnh của Nguyễn Văn Khánh Nhân" width="128" height="128" loading="lazy" decoding="async" class="block size-24 rounded-full object-cover ring-4 ring-(--g1)/25 lg:size-32" />
+        </picture>
         <div class="flex-1">
           <h2 class="text-xl font-extrabold lg:text-2xl">{d.ve_minh.tieu_de}</h2>
           <!-- Mỗi câu một dòng; cụm tên riêng giữ nguyên trên một dòng (nbsp) -->
           <p class="mt-1.5 text-pretty text-muted lg:text-lg">
-            <span class="block">Mình là <b class="text-ink">{d.ve_minh.ten}</b>.</span>
+            <span class="block">Mình là <b class="whitespace-nowrap text-ink">{d.ve_minh.ten}</b>.</span>
             {d.ve_minh.noi_dung.split('. ').map((c, i, a) => <span class="block">{(i < a.length - 1 ? `${c}.` : c).replace(/(ĐH|Bách Khoa|Khoa học|landing|Python|Sài) /g, '$1\u00a0')}</span>)}
           </p>
           <div class="mt-4 flex flex-wrap justify-center gap-2.5 sm:justify-start">
