@@ -76,7 +76,11 @@ const zalo = `https://zalo.me/${chung.zalo}`;
         <div class="grid size-20 shrink-0 place-items-center rounded-full bg-gradient-to-br from-(--g1) to-(--g3) text-3xl font-extrabold text-white">N</div>
         <div class="flex-1">
           <h2 class="text-xl font-extrabold lg:text-2xl">{d.ve_minh.tieu_de}</h2>
-          <p class="mt-1.5 text-muted lg:text-lg">Mình là <b class="text-ink">{d.ve_minh.ten}</b>. {d.ve_minh.noi_dung}</p>
+          <!-- Mỗi câu một dòng; cụm tên riêng giữ nguyên trên một dòng (nbsp) -->
+          <p class="mt-1.5 text-pretty text-muted lg:text-lg">
+            <span class="block">Mình là <b class="text-ink">{d.ve_minh.ten}</b>.</span>
+            {d.ve_minh.noi_dung.split('. ').map((c, i, a) => <span class="block">{(i < a.length - 1 ? `${c}.` : c).replace(/(ĐH|Bách Khoa|Khoa học|landing|Python|Sài) /g, '$1\u00a0')}</span>)}
+          </p>
           <div class="mt-4 flex flex-wrap justify-center gap-2.5 sm:justify-start">
             <a href={d.ve_minh.link} target="_blank" rel="noopener" class="btn bg-brand text-brand-ink"><Icon name="user" />{d.ve_minh.nut}</a>
             <a href={zalo} class="btn border-[1.5px] border-brand text-brand"><Icon name="chat" />Nhắn Zalo</a>
