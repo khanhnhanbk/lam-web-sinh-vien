@@ -1,0 +1,353 @@
+---
+// Trang "Chuẩn bị": hướng dẫn thầy cô tự tạo thư mục Google Drive + Google Doc chứa thông tin và ảnh,
+// thay cho form gửi một lần (gửi xong không xem lại, không sửa được).
+// Trang chỉ giúp chọn mục / màu / bố cục và soạn sẵn phiếu để chép vào Google Doc. Không gửi dữ liệu đi đâu;
+// lựa chọn được nhớ trên trình duyệt của người xem (localStorage) để quay lại không mất.
+// Chữ ở src/data/gia-su/chuan-bi.json.
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import NavGiaSu from '../../components/NavGiaSu.astro';
+import d from '../../data/gia-su/chuan-bi.json';
+import chung from '../../data/noi-dung.json';
+const zalo = `https://zalo.me/${chung.zalo}`;
+const m = d.buoc_muc;
+// Dữ liệu cho script soạn phiếu
+const duLieu = {
+  coDinh: m.muc_co_dinh,
+  muc: m.muc,
+  mau: d.buoc_mau.lua_chon.map((x) => ({ id: x.id, ten: x.ten, mau: x.mau })),
+  boCuc: d.buoc_bo_cuc.lua_chon.map((x) => ({ id: x.id, ten: x.ten })),
+};
+// Tiêu đề từng bước, dùng chung cho thẻ bước và mục lục
+const buoc = [
+  { id: 'thu-muc', icon: 'folder', ten: d.buoc_drive.tieu_de },
+  { id: 'chon-muc', icon: 'list', ten: m.tieu_de },
+  { id: 'chon-mau', icon: 'palette', ten: d.buoc_mau.tieu_de },
+  { id: 'chon-bo-cuc', icon: 'layout', ten: d.buoc_bo_cuc.tieu_de },
+  { id: 'phieu', icon: 'doc', ten: d.buoc_phieu.tieu_de },
+  { id: 'anh', icon: 'image', ten: d.buoc_anh.tieu_de },
+  { id: 'chia-se', icon: 'share', ten: d.buoc_chia_se.tieu_de },
+];
+const tieuDeBuoc = 'flex items-start gap-3 text-xl font-extrabold lg:text-2xl';
+const soBuoc = 'grid size-9 shrink-0 place-items-center rounded-full bg-brand text-base font-extrabold text-brand-ink';
+const chonCard = 'tile relative flex cursor-pointer flex-col p-4 transition hover:-translate-y-0.5 has-[:checked]:border-brand has-[:checked]:ring-2 has-[:checked]:ring-brand has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-brand';
+---
+<Base title={d.seo.title} description={d.seo.description}>
+  <header class="hero relative overflow-hidden rounded-b-[28px] bg-gradient-to-br from-(--g1) via-(--g2) to-(--g3) text-white lg:rounded-b-[44px]">
+    <NavGiaSu hienTai="chuan-bi" />
+    <div class="mx-auto max-w-5xl px-5 pt-24 pb-12 lg:px-8 lg:pt-32 lg:pb-16">
+      <div class="len">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-sm font-bold"><span class="size-2 rounded-full bg-accent"></span>{d.hero.nhan}</span>
+        <h1 class="mt-4 text-[2rem] leading-[1.15] font-extrabold tracking-tight sm:text-5xl">
+          <span class="block">{d.hero.tieu_de[0]}</span>
+          <span class="block text-accent">{d.hero.tieu_de[1]}</span>
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg opacity-90">{d.hero.mo_ta}</p>
+      </div>
+      <!-- Mục lục 7 bước -->
+      <ol class="len mt-8 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        {buoc.map((b, i) => (
+          <li><a href={`#${b.id}`} class="glass flex h-full items-center gap-2.5 rounded-2xl px-3 py-2.5 text-sm font-bold hover:bg-white/25">
+            <span class="grid size-7 shrink-0 place-items-center rounded-full bg-white text-xs font-extrabold text-(--g1)">{i + 1}</span>{b.ten}
+          </a></li>
+        ))}
+      </ol>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-5xl space-y-5 px-4 pt-10 pb-28 lg:px-8 lg:pt-14 lg:pb-16">
+    <!-- BƯỚC 1: thư mục Drive -->
+    <section id="thu-muc" class="tile len p-6 lg:p-8">
+      <h2 class={tieuDeBuoc}><span class={soBuoc}>1</span><span class="pt-0.5">{d.buoc_drive.tieu_de}</span></h2>
+      <p class="mt-2 text-pretty text-muted lg:text-lg">{d.buoc_drive.mo_ta}</p>
+      <ol class="mt-4 space-y-2.5">
+        {d.buoc_drive.y.map((y) => <li class="flex gap-2"><Icon name="check" class="mt-0.5 size-5 shrink-0 text-brand" stroke={2.4} /><span set:html={y} /></li>)}
+      </ol>
+      <a href="https://drive.google.com/drive/my-drive" target="_blank" rel="noopener" class="btn mt-5 bg-brand text-brand-ink"><Icon name="folder" />{d.buoc_drive.nut}</a>
+    </section>
+
+    <!-- BƯỚC 2: chọn mục + thứ tự -->
+    <section id="chon-muc" class="tile len p-6 lg:p-8">
+      <h2 class={tieuDeBuoc}><span class={soBuoc}>2</span><span class="pt-0.5">{m.tieu_de}</span></h2>
+      <p class="mt-2 text-pretty text-muted lg:text-lg">{m.mo_ta}</p>
+      <div class="mt-5 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+        {m.muc_co_dinh.map((x) => (
+          <div class="flex gap-3 rounded-2xl border border-line bg-soft p-3.5">
+            <span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-md bg-brand text-brand-ink"><Icon name="check" class="size-3.5" stroke={3} /></span>
+            <span><b class="block">{x.ten} <span class="text-xs font-bold text-brand">· luôn có</span></b><span class="text-sm text-muted">{x.goi_y}</span></span>
+          </div>
+        ))}
+        {m.muc.map((x) => (
+          <label class="flex cursor-pointer gap-3 rounded-2xl border border-line p-3.5 transition hover:border-brand has-[:checked]:border-brand has-[:checked]:bg-soft">
+            <input type="checkbox" name="muc" value={x.id} checked={x.mac_dinh} class="mt-1 size-4 shrink-0 accent-(--c-brand)" />
+            <span><b class="block">{x.ten}</b><span class="text-sm text-muted">{x.goi_y}</span></span>
+          </label>
+        ))}
+      </div>
+      <label class="mt-4 block">
+        <b>{m.them_tieu_de}</b>
+        <input id="themMuc" type="text" placeholder={m.them_goi_y} class="mt-2 w-full rounded-xl border border-line bg-bg px-3.5 py-2.5 outline-brand" />
+      </label>
+
+      <div class="mt-6 rounded-2xl bg-soft p-4 lg:p-5">
+        <h3 class="font-bold">{m.thu_tu_tieu_de}</h3>
+        <p class="text-sm text-muted">{m.thu_tu_mo_ta}</p>
+        <ol id="thuTu" class="mt-3 space-y-1.5" aria-live="polite"></ol>
+      </div>
+    </section>
+
+    <!-- BƯỚC 3: màu, 4 bộ + tự đề xuất -->
+    <section id="chon-mau" class="tile len p-6 lg:p-8">
+      <h2 class={tieuDeBuoc}><span class={soBuoc}>3</span><span class="pt-0.5">{d.buoc_mau.tieu_de}</span></h2>
+      <p class="mt-2 text-pretty text-muted lg:text-lg">{d.buoc_mau.mo_ta}</p>
+      <div class="mt-5 grid grid-cols-2 gap-2.5 lg:grid-cols-4">
+        {d.buoc_mau.lua_chon.map((x, i) => (
+          <label class={chonCard}>
+            <input type="radio" name="mau" value={x.id} checked={i === 0} class="sr-only" />
+            <!-- Xem trước nhỏ: đầu trang + nút theo bộ màu -->
+            <span class="block overflow-hidden rounded-xl border border-line bg-white" aria-hidden="true">
+              <span class="flex h-14 items-center gap-2 px-3" style={`background:linear-gradient(135deg, ${x.mau[0]}, ${x.mau[1]})`}>
+                <span class="size-7 rounded-full border-2 border-white bg-white/30"></span>
+                <span class="h-2 w-12 rounded-full bg-white/80"></span>
+              </span>
+              <span class="flex items-center justify-between gap-2 px-3 py-2.5">
+                <span class="h-1.5 w-10 rounded-full bg-[#e7e3da]"></span>
+                <span class="h-4 w-11 rounded-full" style={`background:${x.mau[2]}`}></span>
+              </span>
+            </span>
+            <b class="mt-3 block leading-tight">{x.ten}</b>
+            <span class="text-sm text-muted">{x.cam_giac}</span>
+            <span class="mt-2 flex gap-1.5">
+              {x.mau.map((c) => <span class="size-4 rounded-full border border-black/10" style={`background:${c}`} title={c}></span>)}
+            </span>
+          </label>
+        ))}
+      </div>
+      <label class={`${chonCard} mt-2.5`}>
+        <span class="flex items-center gap-3">
+          <input type="radio" name="mau" value="tu-de-xuat" class="size-4 shrink-0 accent-(--c-brand)" />
+          <b>{d.buoc_mau.tu_de_xuat}</b>
+        </span>
+        <ul class="mt-2.5 space-y-1.5 text-sm text-muted">
+          {d.buoc_mau.huong_dan.map((h) => <li class="flex gap-2"><span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand"></span><span set:html={h} /></li>)}
+        </ul>
+        <textarea id="mauTu" rows="3" placeholder={d.buoc_mau.placeholder} class="mt-3 w-full rounded-xl border border-line bg-bg px-3.5 py-2.5 outline-brand"></textarea>
+      </label>
+      <p class="mt-4 text-sm text-pretty text-muted">{d.buoc_mau.xem_thu} <a href={d.buoc_mau.xem_thu_link} target="_blank" rel="noopener" class="font-bold text-brand underline">Mở trang mẫu</a></p>
+    </section>
+
+    <!-- BƯỚC 4: bố cục, 3 kiểu + tự đề xuất -->
+    <section id="chon-bo-cuc" class="tile len p-6 lg:p-8">
+      <h2 class={tieuDeBuoc}><span class={soBuoc}>4</span><span class="pt-0.5">{d.buoc_bo_cuc.tieu_de}</span></h2>
+      <p class="mt-2 text-pretty text-muted lg:text-lg">{d.buoc_bo_cuc.mo_ta}</p>
+      <div class="mt-5 grid gap-2.5 sm:grid-cols-3">
+        {d.buoc_bo_cuc.lua_chon.map((x, i) => (
+          <label class={chonCard}>
+            <input type="radio" name="boCuc" value={x.id} checked={i === 0} class="sr-only" />
+            <!-- Sơ đồ bố cục -->
+            <span class="flex h-28 flex-col gap-1.5 rounded-xl border border-line bg-bg p-2.5" aria-hidden="true">
+              {x.id === 'mot-cot' && <>
+                <span class="mx-auto size-8 shrink-0 rounded-full bg-brand/70"></span>
+                <span class="h-2.5 shrink-0 rounded bg-brand/40"></span>
+                <span class="h-2.5 shrink-0 rounded bg-line"></span>
+                <span class="h-2.5 shrink-0 rounded bg-line"></span>
+                <span class="h-2.5 w-2/3 shrink-0 rounded bg-line"></span>
+              </>}
+              {x.id === 'o-the' && <span class="grid flex-1 grid-cols-3 grid-rows-2 gap-1.5">
+                <span class="row-span-2 rounded bg-brand/70"></span>
+                <span class="col-span-2 rounded bg-brand/30"></span>
+                <span class="rounded bg-line"></span>
+                <span class="rounded bg-line"></span>
+              </span>}
+              {x.id === 'anh-lon' && <>
+                <span class="flex flex-1 items-end rounded bg-brand/70 p-1.5"><span class="h-2 w-1/2 rounded bg-white/80"></span></span>
+                <span class="h-2.5 shrink-0 rounded bg-line"></span>
+              </>}
+            </span>
+            <b class="mt-3 block">{x.ten}</b>
+            <span class="text-sm text-muted">{x.mo_ta}</span>
+          </label>
+        ))}
+      </div>
+      <label class={`${chonCard} mt-2.5`}>
+        <span class="flex items-center gap-3">
+          <input type="radio" name="boCuc" value="tu-de-xuat" class="size-4 shrink-0 accent-(--c-brand)" />
+          <b>{d.buoc_bo_cuc.tu_de_xuat}</b>
+        </span>
+        <ul class="mt-2.5 space-y-1.5 text-sm text-muted">
+          {d.buoc_bo_cuc.huong_dan.map((h) => <li class="flex gap-2"><span class="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand"></span><span>{h}</span></li>)}
+        </ul>
+        <textarea id="boCucTu" rows="3" placeholder={d.buoc_bo_cuc.placeholder} class="mt-3 w-full rounded-xl border border-line bg-bg px-3.5 py-2.5 outline-brand"></textarea>
+      </label>
+    </section>
+
+    <!-- BƯỚC 5: phiếu thông tin để chép vào Google Doc -->
+    <section id="phieu" class="tile len p-6 lg:p-8">
+      <h2 class={tieuDeBuoc}><span class={soBuoc}>5</span><span class="pt-0.5">{d.buoc_phieu.tieu_de}</span></h2>
+      <p class="mt-2 text-pretty text-muted lg:text-lg">{d.buoc_phieu.mo_ta}</p>
+      <ol class="mt-4 space-y-2.5">
+        {d.buoc_phieu.y.map((y) => <li class="flex gap-2"><Icon name="check" class="mt-0.5 size-5 shrink-0 text-brand" stroke={2.4} /><span set:html={y} /></li>)}
+      </ol>
+      <div class="mt-5 flex flex-wrap gap-2.5">
+        <button id="chepPhieu" type="button" class="btn bg-brand text-brand-ink" data-xong={d.buoc_phieu.da_chep}><Icon name="copy" /><span>{d.buoc_phieu.nut_chep}</span></button>
+        <a href="https://docs.new" target="_blank" rel="noopener" class="btn border-[1.5px] border-brand text-brand"><Icon name="doc" />{d.buoc_phieu.nut_doc}</a>
+      </div>
+      <pre id="phieuXem" class="mt-5 max-h-96 overflow-auto rounded-2xl border border-line bg-bg p-4 font-sans text-sm leading-relaxed whitespace-pre-wrap"></pre>
+    </section>
+
+    <!-- BƯỚC 6: ảnh -->
+    <section id="anh" class="tile len p-6 lg:p-8">
+      <h2 class={tieuDeBuoc}><span class={soBuoc}>6</span><span class="pt-0.5">{d.buoc_anh.tieu_de}</span></h2>
+      <p class="mt-2 text-pretty text-muted lg:text-lg" set:html={d.buoc_anh.mo_ta} />
+      <ul class="mt-4 space-y-2.5">
+        {d.buoc_anh.y.map((y) => <li class="flex gap-2"><Icon name="image" class="mt-0.5 size-5 shrink-0 text-brand" /><span>{y}</span></li>)}
+      </ul>
+      <p class="mt-4 rounded-xl bg-accent/25 px-4 py-3 text-sm font-medium text-pretty">💡 {d.buoc_anh.meo}</p>
+    </section>
+
+    <!-- BƯỚC 7: chia sẻ -->
+    <section id="chia-se" class="tile len p-6 lg:p-8">
+      <h2 class={tieuDeBuoc}><span class={soBuoc}>7</span><span class="pt-0.5">{d.buoc_chia_se.tieu_de}</span></h2>
+      <ol class="mt-4 space-y-2.5">
+        {d.buoc_chia_se.y.map((y) => <li class="flex gap-2"><Icon name="check" class="mt-0.5 size-5 shrink-0 text-brand" stroke={2.4} /><span set:html={y} /></li>)}
+      </ol>
+      <div class="mt-5 flex flex-col gap-2.5 rounded-2xl bg-soft p-4 sm:flex-row sm:items-center sm:justify-between">
+        <b class="break-all text-brand">{d.email_chia_se}</b>
+        <button id="chepEmail" type="button" class="btn shrink-0 border-[1.5px] border-brand py-2 text-brand" data-email={d.email_chia_se} data-xong={d.buoc_chia_se.da_chep_email}><Icon name="copy" /><span>{d.buoc_chia_se.nut_chep_email}</span></button>
+      </div>
+      <a href={zalo} class="btn mt-5 bg-brand text-brand-ink"><Icon name="chat" />{d.buoc_chia_se.nut_zalo}</a>
+    </section>
+
+    <p class="len pt-4 text-center text-muted">Còn thắc mắc? Xem <a href="/gia-su/hoi-dap.html#hoi-dap" class="font-bold text-brand underline">trang Hỏi đáp</a> hoặc <a href={zalo} class="font-bold text-brand underline">nhắn Zalo</a> cho mình.</p>
+  </main>
+
+  <footer class="pb-24 text-center text-sm text-muted lg:pb-10">© 2026 {chung.thuong_hieu} · Nguyễn Văn Khánh Nhân · <a class="underline" href="https://khanhnhanbk.github.io">khanhnhanbk.github.io</a></footer>
+
+  <div class="khong-in fixed inset-x-0 bottom-0 z-30 flex gap-2.5 border-t border-line bg-bg/90 px-4 py-3 backdrop-blur sm:hidden">
+    <a href="#phieu" class="btn flex-1 bg-brand text-brand-ink"><Icon name="doc" />Xem phiếu</a>
+    <a href={zalo} class="btn flex-1 border-[1.5px] border-brand text-brand"><Icon name="chat" />Zalo</a>
+  </div>
+
+  <script type="application/json" id="duLieu" set:html={JSON.stringify(duLieu)} />
+  <script is:inline>
+    (() => {
+      const D = JSON.parse(document.getElementById('duLieu').textContent);
+      const KEY = 'chuan-bi-gia-su';
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => [...document.querySelectorAll(s)];
+      const tenMuc = Object.fromEntries([...D.coDinh, ...D.muc].map((x) => [x.id, x]));
+      let thuTu = D.muc.map((x) => x.id); // thứ tự các mục chọn được (đầu trang luôn đầu, liên hệ luôn cuối)
+
+      // --- Nhớ lựa chọn trên trình duyệt này ---
+      const luu = () => {
+        try {
+          localStorage.setItem(KEY, JSON.stringify({
+            chon: $$('input[name=muc]:checked').map((i) => i.value), thuTu,
+            mau: ($('input[name=mau]:checked') || {}).value, mauTu: $('#mauTu').value,
+            boCuc: ($('input[name=boCuc]:checked') || {}).value, boCucTu: $('#boCucTu').value,
+            themMuc: $('#themMuc').value,
+          }));
+        } catch (e) {}
+      };
+      try {
+        const s = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (s) {
+          if (Array.isArray(s.chon)) $$('input[name=muc]').forEach((i) => (i.checked = s.chon.includes(i.value)));
+          if (Array.isArray(s.thuTu)) thuTu = [...s.thuTu.filter((id) => tenMuc[id]), ...thuTu.filter((id) => !s.thuTu.includes(id))];
+          const r = (n, v) => { const el = v && $(`input[name=${n}][value="${v}"]`); if (el) el.checked = true; };
+          r('mau', s.mau); r('boCuc', s.boCuc);
+          $('#mauTu').value = s.mauTu || ''; $('#boCucTu').value = s.boCucTu || ''; $('#themMuc').value = s.themMuc || '';
+        }
+      } catch (e) {}
+
+      const dangChon = () => {
+        const chon = $$('input[name=muc]:checked').map((i) => i.value);
+        return thuTu.filter((id) => chon.includes(id));
+      };
+
+      // --- Danh sách thứ tự có nút lên/xuống ---
+      const muiTen = (huong) => `<svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${huong === 'len' ? 'M12 19V5M6 11l6-6 6 6' : 'M12 5v14M6 13l6 6 6-6'}"/></svg>`;
+      const dong = (stt, ten, coDinh, id, dau, cuoi) => `<li class="flex items-center gap-2.5 rounded-xl ${coDinh ? 'bg-transparent' : 'border border-line bg-card'} px-3 py-2">
+        <span class="w-5 shrink-0 text-right text-sm font-extrabold text-brand">${stt}.</span>
+        <span class="flex-1 font-medium">${ten}${coDinh ? ' <span class="text-xs font-bold text-muted">· cố định</span>' : ''}</span>
+        ${coDinh ? '' : `<button type="button" data-len="${id}" class="grid size-8 place-items-center rounded-full border border-line disabled:opacity-30" aria-label="Đưa ${ten} lên trước" ${dau ? 'disabled' : ''}>${muiTen('len')}</button>
+        <button type="button" data-xuong="${id}" class="grid size-8 place-items-center rounded-full border border-line disabled:opacity-30" aria-label="Đưa ${ten} xuống sau" ${cuoi ? 'disabled' : ''}>${muiTen('xuong')}</button>`}
+      </li>`;
+      const veThuTu = () => {
+        const ds = dangChon();
+        const them = $('#themMuc').value.trim();
+        let i = 1;
+        let h = dong(i++, tenMuc['dau-trang'].ten, true);
+        ds.forEach((id, k) => (h += dong(i++, tenMuc[id].ten, false, id, k === 0, k === ds.length - 1)));
+        if (them) h += dong(i++, `Thêm: ${them.replace(/[<>&]/g, '')}`, true);
+        h += dong(i, tenMuc['lien-he'].ten, true);
+        $('#thuTu').innerHTML = h;
+      };
+      const doiCho = (id, buoc) => {
+        const ds = dangChon();
+        const k = ds.indexOf(id), j = k + buoc;
+        if (k < 0 || j < 0 || j >= ds.length) return;
+        // đổi chỗ trong thuTu đầy đủ, giữ nguyên vị trí các mục chưa chọn
+        const a = thuTu.indexOf(ds[k]), b = thuTu.indexOf(ds[j]);
+        [thuTu[a], thuTu[b]] = [thuTu[b], thuTu[a]];
+        capNhat();
+        const nut = $(`[data-${buoc < 0 ? 'len' : 'xuong'}="${id}"]`);
+        (nut && !nut.disabled ? nut : $(`[data-${buoc < 0 ? 'xuong' : 'len'}="${id}"]`))?.focus();
+      };
+      $('#thuTu').addEventListener('click', (e) => {
+        const b = e.target.closest('button'); if (!b) return;
+        if (b.dataset.len) doiCho(b.dataset.len, -1);
+        if (b.dataset.xuong) doiCho(b.dataset.xuong, 1);
+      });
+
+      // --- Soạn phiếu ---
+      const soanPhieu = () => {
+        const mau = ($('input[name=mau]:checked') || {}).value;
+        const boCuc = ($('input[name=boCuc]:checked') || {}).value;
+        const mauTu = $('#mauTu').value.trim(), boCucTu = $('#boCucTu').value.trim(), them = $('#themMuc').value.trim();
+        const m = D.mau.find((x) => x.id === mau);
+        const bc = D.boCuc.find((x) => x.id === boCuc);
+        const ds = ['dau-trang', ...dangChon(), 'lien-he'];
+        const L = [];
+        L.push('PHIẾU THÔNG TIN TRANG WEB');
+        L.push('Điền sau dấu hai chấm. Sửa lúc nào cũng được, sửa xong nhắn Zalo cho Novian một câu.');
+        L.push('');
+        L.push('LỰA CHỌN');
+        L.push(`- Màu: ${m ? `${m.ten} (${m.mau.join(', ')})` : 'Tự đề xuất'}${mauTu ? `. Ghi chú: ${mauTu}` : ''}`);
+        L.push(`- Bố cục: ${bc ? bc.ten : 'Tự đề xuất'}${boCucTu ? `. Ghi chú: ${boCucTu}` : ''}`);
+        L.push(`- Thứ tự các mục: ${[...ds.map((id) => tenMuc[id].ten).slice(0, -1), ...(them ? [them] : []), tenMuc['lien-he'].ten].join(' → ')}`);
+        ds.forEach((id, k) => {
+          L.push('');
+          L.push(`${k + 1}. ${tenMuc[id].ten.toUpperCase()}`);
+          tenMuc[id].dien.forEach((x) => L.push(`- ${x}: `));
+        });
+        if (them) { L.push(''); L.push(`${ds.length + 1}. MỤC THÊM: ${them.toUpperCase()}`); L.push('- Nội dung: '); }
+        L.push('');
+        L.push('GHI CHÚ KHÁC');
+        L.push('- Điều muốn có / không muốn có trên trang: ');
+        return L.join('\n');
+      };
+
+      const capNhat = () => { veThuTu(); $('#phieuXem').textContent = soanPhieu(); luu(); };
+      document.addEventListener('change', (e) => { if (e.target.matches('input')) capNhat(); });
+      ['#mauTu', '#boCucTu', '#themMuc'].forEach((s) => $(s).addEventListener('input', (e) => {
+        // gõ đề xuất thì tự chọn ô "Tự đề xuất"
+        if (s !== '#themMuc' && e.target.value.trim()) $(`input[name=${s === '#mauTu' ? 'mau' : 'boCuc'}][value=tu-de-xuat]`).checked = true;
+        capNhat();
+      }));
+      capNhat();
+
+      // --- Nút chép ---
+      const chep = async (nut, chu) => {
+        try { await navigator.clipboard.writeText(chu); } catch (e) {
+          const t = document.createElement('textarea'); t.value = chu; document.body.append(t); t.select();
+          try { document.execCommand('copy'); } catch (e2) {} t.remove();
+        }
+        const span = nut.querySelector('span:last-child'), cu = span.textContent;
+        span.textContent = nut.dataset.xong; setTimeout(() => (span.textContent = cu), 2500);
+      };
+      $('#chepPhieu').addEventListener('click', (e) => chep(e.currentTarget, soanPhieu()));
+      $('#chepEmail').addEventListener('click', (e) => chep(e.currentTarget, e.currentTarget.dataset.email));
+    })();
+  </script>
+</Base>

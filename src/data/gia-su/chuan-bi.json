@@ -1,0 +1,196 @@
+{
+  "seo": {
+    "title": "Chuẩn bị thông tin làm trang web · Novian",
+    "description": "Chọn mục cần có, màu, bố cục, rồi gửi thông tin và ảnh qua thư mục Google Drive của thầy cô. Sửa lại lúc nào cũng được."
+  },
+  "hero": {
+    "nhan": "Khoảng 20 phút, làm trên điện thoại được",
+    "tieu_de": ["Chuẩn bị thông tin", "cho trang web của thầy cô"],
+    "mo_ta": "Thông tin nằm trong Google Drive của thầy cô, không phải form gửi một lần. Muốn sửa chữ hay đổi ảnh, thầy cô sửa trong Drive là mình thấy bản mới nhất.",
+    "nut": "Bắt đầu"
+  },
+  "email_chia_se": "nhannguyenqna2002@gmail.com",
+  "buoc_drive": {
+    "tieu_de": "Tạo thư mục Google Drive",
+    "mo_ta": "Thư mục này là chỗ để mọi thứ cho trang web. Thầy cô giữ nó, mình chỉ được xem.",
+    "y": [
+      "Mở Google Drive (app trên điện thoại hoặc drive.google.com).",
+      "Bấm nút <b>+ Mới</b> rồi chọn <b>Thư mục</b>.",
+      "Đặt tên: <b>Trang web · Tên thầy cô</b>, ví dụ <i>Trang web · Thầy Lâm</i>.",
+      "Mở thư mục vừa tạo, tạo thêm một thư mục con tên <b>Ảnh</b>."
+    ],
+    "nut": "Mở Google Drive"
+  },
+  "buoc_muc": {
+    "tieu_de": "Chọn mục muốn có trên trang",
+    "mo_ta": "Tick mục cần, bỏ tick mục không cần. Đầu trang và Liên hệ thì trang nào cũng có.",
+    "thu_tu_tieu_de": "Thứ tự hiện trên trang",
+    "thu_tu_mo_ta": "Bấm mũi tên để đưa mục lên trước hoặc xuống sau.",
+    "muc_co_dinh": [
+      {
+        "id": "dau-trang",
+        "ten": "Đầu trang",
+        "goi_y": "Ảnh chân dung, tên, môn dạy, một câu giới thiệu.",
+        "dien": ["Tên hiển thị trên trang (vd. Thầy Lâm, Cô Hằng)", "Môn dạy", "Dạy online, tại nhà hay ở trung tâm; khu vực", "Một câu giới thiệu ngắn (vd. 6 năm dạy HSK cho người đi làm)"]
+      },
+      {
+        "id": "lien-he",
+        "ten": "Liên hệ",
+        "goi_y": "Nút nhắn Zalo, gọi điện, email.",
+        "dien": ["Số Zalo", "Số điện thoại (nếu khác Zalo)", "Email (nếu muốn ghi)", "Facebook, TikTok, YouTube (nếu có)"]
+      }
+    ],
+    "muc": [
+      {
+        "id": "gioi-thieu",
+        "ten": "Giới thiệu",
+        "goi_y": "Vài câu về thầy cô và cách dạy.",
+        "mac_dinh": true,
+        "dien": ["Vài câu về bản thân", "Cách dạy, điều học viên thích ở lớp mình"]
+      },
+      {
+        "id": "bang-cap",
+        "ten": "Bằng cấp, kinh nghiệm",
+        "goi_y": "Trường, chứng chỉ, số năm dạy.",
+        "mac_dinh": true,
+        "dien": ["Trường, ngành học", "Chứng chỉ (vd. HSK 6, IELTS 8.0, TESOL)", "Số năm dạy, khoảng bao nhiêu học viên"]
+      },
+      {
+        "id": "lop-hoc-phi",
+        "ten": "Lớp dạy, học phí",
+        "goi_y": "Tên lớp, dành cho ai, học phí.",
+        "mac_dinh": true,
+        "dien": ["Từng lớp: tên lớp, dành cho ai, học mấy buổi một tuần, mỗi buổi bao lâu", "Học phí từng lớp, hoặc ghi \"không hiện học phí\"", "Tính theo buổi, theo tháng hay theo khoá"]
+      },
+      {
+        "id": "lich-ranh",
+        "ten": "Lịch còn trống",
+        "goi_y": "Các buổi còn nhận học viên.",
+        "mac_dinh": true,
+        "dien": ["Các buổi còn trống trong tuần (vd. Thứ 3 tối, Chủ nhật sáng)"]
+      },
+      {
+        "id": "nhan-xet",
+        "ten": "Nhận xét học viên",
+        "goi_y": "Lời khen của học viên, phụ huynh.",
+        "mac_dinh": false,
+        "dien": ["2 đến 3 lời nhận xét, kèm tên hoặc tên viết tắt", "Ghi chú: đã xin phép người đó cho đưa lên trang chưa"]
+      },
+      {
+        "id": "thanh-tich",
+        "ten": "Thành tích học viên",
+        "goi_y": "Điểm thi, kết quả nổi bật.",
+        "mac_dinh": false,
+        "dien": ["Kết quả có con số (vd. 12 bạn đậu HSK 4 năm 2026)"]
+      },
+      {
+        "id": "anh-lop",
+        "ten": "Ảnh lớp học",
+        "goi_y": "Ảnh buổi học, góc dạy, tài liệu.",
+        "mac_dinh": false,
+        "dien": ["Bỏ ảnh vào thư mục Ảnh, ghi chú ảnh nào muốn hiện to"]
+      },
+      {
+        "id": "video",
+        "ten": "Video giới thiệu",
+        "goi_y": "Link YouTube, TikTok, Facebook.",
+        "mac_dinh": false,
+        "dien": ["Link video muốn gắn lên trang"]
+      },
+      {
+        "id": "hoi-dap",
+        "ten": "Hỏi đáp cho phụ huynh",
+        "goi_y": "Câu hỏi học viên hay hỏi trước khi học.",
+        "mac_dinh": false,
+        "dien": ["3 đến 5 câu hỏi hay gặp, kèm câu trả lời của thầy cô"]
+      },
+      {
+        "id": "dang-ky",
+        "ten": "Form đăng ký học thử",
+        "goi_y": "Học viên để lại tên, số điện thoại.",
+        "mac_dinh": false,
+        "dien": ["Muốn hỏi học viên những gì khi đăng ký (vd. tên, tuổi, trình độ, giờ rảnh)"]
+      },
+      {
+        "id": "dia-chi",
+        "ten": "Địa chỉ lớp, bản đồ",
+        "goi_y": "Cho lớp dạy tại nhà hoặc trung tâm.",
+        "mac_dinh": false,
+        "dien": ["Địa chỉ lớp hoặc link Google Maps"]
+      }
+    ],
+    "them_tieu_de": "Muốn thêm mục khác?",
+    "them_goi_y": "Ví dụ: tài liệu miễn phí, lịch khai giảng, blog chia sẻ cách học..."
+  },
+  "buoc_mau": {
+    "tieu_de": "Chọn màu",
+    "mo_ta": "Chọn một trong bốn bộ màu. Bộ nào cũng có bản sáng và tối, người xem tự bấm chuyển.",
+    "lua_chon": [
+      { "id": "xanh-reu", "ten": "Xanh rêu", "cam_giac": "Ấm, dễ tin", "mau": ["#1f6f5c", "#2a8a6e", "#f2c14e"] },
+      { "id": "xanh-duong", "ten": "Xanh dương", "cam_giac": "Trẻ, năng động", "mau": ["#1d4ed8", "#2563eb", "#f97316"] },
+      { "id": "tim", "ten": "Tím than", "cam_giac": "Mềm, sáng tạo", "mau": ["#3730a3", "#4f46e5", "#fb7185"] },
+      { "id": "do-son", "ten": "Đỏ son", "cam_giac": "Trang trọng", "mau": ["#9f1d26", "#c0392b", "#e0a526"] }
+    ],
+    "tu_de_xuat": "Tự đề xuất màu",
+    "huong_dan": [
+      "Bỏ một tấm ảnh có màu thầy cô thích vào thư mục Ảnh: logo, áo đồng phục, bìa sách, một trang web khác...",
+      "Hoặc ghi mã màu, ví dụ <b>#1f6f5c</b>. Tìm mã màu: gõ \"color picker\" trên Google.",
+      "Hoặc dán link một bảng màu, ví dụ trên coolors.co.",
+      "Hoặc chỉ cần tả: \"xanh lá nhạt, nhìn dịu mắt, chữ đen\"."
+    ],
+    "placeholder": "Vd. thích màu đỏ như logo trung tâm, ảnh logo đã bỏ vào thư mục",
+    "xem_thu": "Muốn thấy màu chạy thật trên trang? Mở trang mẫu và bấm nút chọn giao diện.",
+    "xem_thu_link": "https://trang-giao-vien.nhannguyenqna2002.workers.dev"
+  },
+  "buoc_bo_cuc": {
+    "tieu_de": "Chọn bố cục",
+    "mo_ta": "Bố cục là cách xếp các mục trên trang. Chưa biết chọn gì thì để mình chọn giùm.",
+    "lua_chon": [
+      { "id": "mot-cot", "ten": "Một cột như CV", "mo_ta": "Đọc từ trên xuống, gọn, dễ in." },
+      { "id": "o-the", "ten": "Ô thẻ", "mo_ta": "Các mục xếp thành ô to nhỏ, như trang mẫu." },
+      { "id": "anh-lon", "ten": "Ảnh lớn đầu trang", "mo_ta": "Ảnh chân dung chiếm trọn màn hình đầu." }
+    ],
+    "tu_de_xuat": "Tự đề xuất bố cục",
+    "huong_dan": [
+      "Dán link một trang web thầy cô thấy đẹp, ghi thích chỗ nào.",
+      "Hoặc chụp màn hình trang đó bỏ vào thư mục Ảnh.",
+      "Hoặc tả: \"ảnh bên trái, chữ bên phải\", \"học phí để ngay đầu\"..."
+    ],
+    "placeholder": "Vd. muốn giống trang abc.com, học phí để ngay dưới ảnh"
+  },
+  "buoc_phieu": {
+    "tieu_de": "Tạo phiếu thông tin trong Google Doc",
+    "mo_ta": "Phiếu dưới đây đã có sẵn lựa chọn của thầy cô ở trên. Chép vào một Google Doc rồi điền tiếp sau dấu hai chấm.",
+    "y": [
+      "Bấm <b>Chép phiếu</b>.",
+      "Bấm <b>Mở Google Doc mới</b>, dán phiếu vào.",
+      "Đặt tên tài liệu là <b>Thông tin trang web</b>, rồi chuyển vào thư mục ở bước 1 (bấm biểu tượng thư mục cạnh tên tài liệu).",
+      "Điền tiếp lúc nào rảnh. Chưa biết thì để trống, mình hỏi sau."
+    ],
+    "nut_chep": "Chép phiếu",
+    "da_chep": "Đã chép, dán vào Google Doc nha",
+    "nut_doc": "Mở Google Doc mới"
+  },
+  "buoc_anh": {
+    "tieu_de": "Bỏ ảnh vào thư mục Ảnh",
+    "mo_ta": "Tải ảnh từ điện thoại lên bằng nút <b>+ Mới → Tải lên</b> trong thư mục Ảnh.",
+    "y": [
+      "1 đến 3 ảnh chân dung rõ mặt, nền gọn. Ảnh ngang hay dọc đều được.",
+      "Ảnh lớp học, góc dạy, tài liệu (nếu có).",
+      "Ảnh bằng cấp, chứng chỉ: che số hiệu, ngày sinh trước khi tải lên.",
+      "Logo hoặc ảnh có màu thầy cô thích (nếu có)."
+    ],
+    "meo": "Tải ảnh gốc từ thư viện ảnh, đừng tải ảnh đã gửi qua Zalo vì Zalo làm ảnh mờ đi."
+  },
+  "buoc_chia_se": {
+    "tieu_de": "Chia sẻ thư mục cho mình",
+    "y": [
+      "Ở Google Drive, bấm dấu ba chấm cạnh thư mục, chọn <b>Chia sẻ</b>.",
+      "Nhập email bên dưới, để quyền <b>Người xem</b>, bấm <b>Gửi</b>.",
+      "Nhắn Zalo cho mình một câu là xong. Từ giờ thầy cô sửa trong Drive là mình thấy, khỏi gửi lại."
+    ],
+    "nut_chep_email": "Chép email",
+    "da_chep_email": "Đã chép email",
+    "nut_zalo": "Nhắn Zalo cho mình"
+  }
+}
